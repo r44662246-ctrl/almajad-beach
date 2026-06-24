@@ -689,7 +689,7 @@
         .checkout-btn {
             width: 100%;
             padding: 1rem;
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
             color: var(--white);
             border: none;
             border-radius: 15px;
@@ -706,7 +706,7 @@
 
         .checkout-btn:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 10px 30px rgba(230, 126, 34, 0.3);
         }
 
         .empty-cart {
@@ -1059,6 +1059,223 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ===== PAYMENT MODAL ===== */
+        .payment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            padding: 1rem;
+        }
+
+        .payment-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .payment-content {
+            background: var(--white);
+            border-radius: 25px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: scaleIn 0.4s ease;
+        }
+
+        .payment-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: var(--white);
+            border-radius: 25px 25px 0 0;
+            text-align: center;
+        }
+
+        .payment-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-body {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .confirm-payment-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: var(--white);
+            border: none;
+            border-radius: 15px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 1.5rem;
+        }
+
+        .confirm-payment-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
+        }
+
+        .order-summary-payment {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+        }
+
+        .order-summary-payment h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--primary);
+            color: var(--accent);
+        }
+
+        .close-payment {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 10;
+        }
+
+        /* ===== COD BADGE ===== */
+        .cod-badge {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border: 2px solid #27ae60;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cod-badge span {
+            font-size: 2.5rem;
+        }
+
+        .cod-badge p {
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .cod-info {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border: 2px solid #ff9800;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .cod-info span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .cod-info p {
+            color: #e65100;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .cod-info small {
+            color: #bf360c;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1275,10 +1492,62 @@
                 <span>الإجمالي:</span>
                 <span id="cartTotal">0 ريال</span>
             </div>
-            <button class="checkout-btn" onclick="sendWhatsAppOrder()">
-                &#128172;
-                إرسال الطلب عبر واتساب
+            <button class="checkout-btn" onclick="openPayment()">
+                &#128179;
+                الدفع والطلب
             </button>
+        </div>
+    </div>
+
+    <!-- COD Checkout Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-content">
+            <button class="close-payment" onclick="closePayment()">&#10060;</button>
+            <div class="payment-header" style="background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                <h2>&#128666; إتمام الطلب</h2>
+                <p>الدفع عند الاستلام - كاش أو بطاقة</p>
+            </div>
+            <div class="payment-body">
+                <div class="cod-badge">
+                    <span>&#9989;</span>
+                    <p>لا يوجد دفع مسبق! ادفع عند استلام طلبك</p>
+                </div>
+                
+                <div class="payment-form" style="display: block;">
+                    <div class="form-group">
+                        <label>&#128100; الاسم الكامل *</label>
+                        <input type="text" id="paymentName" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label>&#128222; رقم الجوال *</label>
+                        <input type="tel" id="paymentPhone" placeholder="05xxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label>&#128205; العنوان *</label>
+                        <textarea id="paymentAddress" rows="3" placeholder="الحي، الشارع، رقم المنزل، علامة مميزة" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>&#128172; ملاحظات (اختياري)</label>
+                        <textarea id="orderNotes" rows="2" placeholder="أي طلبات خاصة؟ مثلا: حار، بدون بصل..."></textarea>
+                    </div>
+                    <div class="order-summary-payment">
+                        <h3>&#129534; ملخص الطلب</h3>
+                        <div id="paymentSummaryItems"></div>
+                        <div class="summary-total">
+                            <span>الإجمالي:</span>
+                            <span id="paymentTotal">0 ريال</span>
+                        </div>
+                    </div>
+                    <div class="cod-info">
+                        <span>&#128666;</span>
+                        <p>سيتم توصيل طلبك خلال 30-45 دقيقة</p>
+                        <small>الدفع عند الاستلام: نقداً أو بطاقة</small>
+                    </div>
+                    <button class="confirm-payment-btn" onclick="processCODOrder()" style="background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                        &#9989; تأكيد الطلب
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1442,16 +1711,63 @@
             document.getElementById('cartSidebar').classList.toggle('active');
         }
 
-        // Send Order via WhatsApp
-        function sendWhatsAppOrder() {
+        // COD Checkout Functions
+        function openPayment() {
             if (cart.length === 0) {
                 alert('السلة فارغة! أضف بعض الأطباق أولاً.');
                 return;
             }
             
-            let message = '*طلب جديد من المجد بيتش* 🐟\\n\\n';
-            message += '*الأطباق:*\\n';
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            document.getElementById('paymentTotal').textContent = total + ' ريال';
             
+            document.getElementById('paymentSummaryItems').innerHTML = cart.map(item => `
+                <div class="summary-item">
+                    <span>${item.name} x ${item.qty}</span>
+                    <span>${item.price * item.qty} ريال</span>
+                </div>
+            `).join('');
+            
+            document.getElementById('paymentModal').classList.add('active');
+        }
+
+        function closePayment() {
+            document.getElementById('paymentModal').classList.remove('active');
+        }
+
+        function processCODOrder() {
+            const name = document.getElementById('paymentName').value.trim();
+            const phone = document.getElementById('paymentPhone').value.trim();
+            const address = document.getElementById('paymentAddress').value.trim();
+            const notes = document.getElementById('orderNotes').value.trim();
+            
+            if (!name) {
+                alert('يرجى إدخال الاسم الكامل');
+                return;
+            }
+            
+            if (!phone || phone.length < 10) {
+                alert('يرجى إدخال رقم جوال صحيح (10 أرقام على الأقل)');
+                return;
+            }
+            
+            if (!address) {
+                alert('يرجى إدخال العنوان بالتفصيل');
+                return;
+            }
+            
+            // Build WhatsApp message
+            let message = '*طلب جديد من المجد بيتش* 🐟\\n\\n';
+            message += '*العميل:*\\n';
+            message += `- الاسم: ${name}\\n`;
+            message += `- الجوال: ${phone}\\n`;
+            message += `- العنوان: ${address}\\n\\n`;
+            
+            if (notes) {
+                message += `*ملاحظات:* ${notes}\\n\\n`;
+            }
+            
+            message += '*الطلب:*\\n';
             let total = 0;
             cart.forEach(item => {
                 message += `- ${item.name} x ${item.qty} = ${item.price * item.qty} ريال\\n`;
@@ -1459,15 +1775,21 @@
             });
             
             message += `\\n*الإجمالي: ${total} ريال*\\n`;
-            message += '\\n_يرجى تأكيد الطلب وتزويدنا بالعنوان_';
+            message += '\\n*طريقة الدفع: عند الاستلام*\\n';
+            message += '\\n_يرجى تأكيد الطلب وتحديد وقت التوصيل_';
             
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/966143913918?text=${encodedMessage}`;
             
             window.open(whatsappUrl, '_blank');
             
+            // Show success
+            alert('✅ تم إرسال طلبك بنجاح!\\n\\nسنتواصل معك عبر واتساب لتأكيد الطلب وتحديد وقت التوصيل.\\n\\nشكراً لاختياركم المجد بيتش! 🐟');
+            
+            // Clear cart and close modal
             cart = [];
             updateCartUI();
+            closePayment();
             toggleCart();
         }
 
