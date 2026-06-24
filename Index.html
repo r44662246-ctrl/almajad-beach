@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المجد بيتش - مطعم بحري في ينبع</title>
+    <meta name="description" content="المجد بيتش - مطعم بحري مصري في ينبع. أشهى المأكولات البحرية والمصرية. اطلب مباشرة من موقعنا.">
+    <meta name="keywords" content="مطعم, ينبع, مأكولات بحرية, مصري, المجد بيتش, سمك, جمبري">
+    <meta name="author" content="Almjad Beach Restaurant">
+    <meta name="theme-color" content="#1a5276">
+    <style>
+        :root {
+            --primary: #1a5276;
+            --primary-dark: #154360;
+            --accent: #e67e22;
+            --accent-light: #f39c12;
+            --gold: #d4af37;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #34495e;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+            background: var(--light);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 50%, #3498db 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            animation: wave 10s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(212,175,55,0.3);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            color: var(--white);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(230,126,34,0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230,126,34,0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .float-icon {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(255,255,255,0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            padding: 0.8rem 2rem;
+        }
+
+        .navbar.scrolled .logo,
+        .navbar.scrolled .nav-links a {
+            color: var(--dark);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-btn {
+            position: relative;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .cart-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            background: var(--gold);
+            color: var(--dark);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text);
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* FEATURES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* MENU */
+        .menu-section {
+            background: linear-gradient(180deg, var(--light) 0%, #e8f4f8 100%);
+        }
+
+        .menu-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .menu-item-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.3);
+            position: relative;
+        }
+
+        .menu-item-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        .menu-item-price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .menu-item-desc {
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart:hover {
+            background: var(--primary-dark);
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .qty-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            background: var(--white);
+            color: var(--primary);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .qty-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .qty-value {
+            font-weight: 800;
+            font-size: 1.2rem;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        /* CART SIDEBAR */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            background: var(--white);
+            z-index: 2001;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            padding: 1.5rem;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.5);
+            flex-shrink: 0;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .cart-item-price {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-item-qty button {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid var(--primary);
+            background: var(--white);
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .remove-item {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .cart-footer {
+            padding: 1.5rem;
+            border-top: 1px solid #eee;
+            background: var(--white);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: var(--white);
+            border: none;
+            border-radius: 15px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .checkout-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text);
+        }
+
+        .empty-cart span {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* TIKTOK SECTION */
+        .tiktok-section {
+            background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tiktok-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+        }
+
+        .tiktok-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .tiktok-section .section-title h2::after {
+            background: #fe2c55;
+        }
+
+        .tiktok-section .section-title p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .tiktok-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tiktok-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f23 100%);
+            border-radius: 25px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .tiktok-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+            border-color: rgba(254, 44, 85, 0.3);
+        }
+
+        .tiktok-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tiktok-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #fe2c55, #ff6b6b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .tiktok-info {
+            flex: 1;
+        }
+
+        .tiktok-info h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .tiktok-info span {
+            color: #fe2c55;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .tiktok-follow-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #fe2c55, #ff6b6b);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .tiktok-follow-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(254, 44, 85, 0.4);
+        }
+
+        .tiktok-preview {
+            margin-bottom: 1.5rem;
+        }
+
+        .tiktok-video-preview {
+            background: linear-gradient(135deg, #2a2a4a 0%, #1a1a3e 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 2px dashed rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tiktok-video-preview:hover {
+            border-color: #fe2c55;
+            background: linear-gradient(135deg, #2a2a4a 0%, #252550 100%);
+        }
+
+        .tiktok-video-preview span {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .tiktok-video-preview p {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tiktok-video-preview span:last-child {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        .tiktok-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .tiktok-stat {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tiktok-stat:hover {
+            background: rgba(254, 44, 85, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .tiktok-stat span {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .tiktok-stat span:last-child {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 1100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .contact-item span {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            .delivery-options {
+                grid-template-columns: 1fr;
+            }
+            .tiktok-header {
+                flex-wrap: wrap;
+            }
+            .tiktok-follow-btn {
+                width: 100%;
+                justify-content: center;
+                margin-top: 0.5rem;
+            }
+            .tiktok-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* SCROLL ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">
+            &#127860;
+            المجد <span style="color: var(--gold);">بيتش</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#features">المميزات</a></li>
+            <li><a href="#menu">القائمة</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+        <button class="cart-btn" onclick="toggleCart()">
+            &#128717;
+            السلة
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-icons">
+            <span class="float-icon" style="top: 20%; right: 10%; animation-delay: 0s;">&#128031;</span>
+            <span class="float-icon" style="top: 60%; left: 15%; animation-delay: 1s;">&#129424;</span>
+            <span class="float-icon" style="top: 30%; left: 20%; animation-delay: 2s;">&#127754;</span>
+            <span class="float-icon" style="bottom: 20%; right: 20%; animation-delay: 3s;">&#127860;</span>
+            <span class="float-icon" style="top: 40%; right: 30%; animation-delay: 1.5s;">&#127819;</span>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                &#11088; مطعم بحري مصري راقٍ
+            </div>
+            <h1>المجد <span>بيتش</span></h1>
+            <p class="hero-subtitle">تجربة بحرية فريدة من نوعها في قلب ينبع</p>
+            <div class="hero-location">
+                &#128205;
+                مقابل قيادة حرس الحدود - حي النسيم، ينبع
+            </div>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">
+                    &#128214;
+                    تصفح القائمة
+                </a>
+                <a href="https://wa.me/966143913918" target="_blank" class="btn btn-outline" style="background: #25D366; color: white; border-color: #25D366;">
+                    &#128172;
+                    واتساب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="section-title fade-in">
+            <h2>لماذا المجد بيتش؟</h2>
+            <p>نقدم لك تجربة طعام استثنائية تجمع بين الأصالة والجودة</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">&#128031;</div>
+                <h3>أطباق بحرية طازجة</h3>
+                <p>نختار أفضل أنواع الأسماك والمأكولات البحرية الطازجة يومياً لضمان أعلى جودة</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">&#128293;</div>
+                <h3>شواية على الفحم</h3>
+                <p>نستخدم الفحم الحي للشواء لإضافة نكهة مدخنة فريدة لكل طبق</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">&#127949;</div>
+                <h3>توصيل سريع</h3>
+                <p>نوصل طلباتك بسرعة إلى باب منزلك مع الحفاظ على الطعام ساخناً وطازجاً</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">&#128241;</div>
+                <h3>طلب مباشر</h3>
+                <p>اطلب مباشرة من موقعنا بدون تطبيقات وسيطة، وتواصل معنا مباشرة</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">&#128176;</div>
+                <h3>أسعار منافسة</h3>
+                <p>أفضل الأسعار في ينبع مع الحفاظ على الجودة العالية والكمية الكبيرة</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">&#128522;</div>
+                <h3>ضيافة مصرية</h3>
+                <p>نقدم لك الضيافة المصرية الأصيلة مع ابتسامة وترحيب حار</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="section-title fade-in">
+            <h2>قائمتنا</h2>
+            <p>أشهى الأطباق البحرية والمصرية التقليدية</p>
+        </div>
+        <div class="menu-filters fade-in">
+            <button class="filter-btn active" onclick="filterMenu('all')">الكل</button>
+            <button class="filter-btn" onclick="filterMenu('seafood')">مأكولات بحرية</button>
+            <button class="filter-btn" onclick="filterMenu('grill')">شواية</button>
+            <button class="filter-btn" onclick="filterMenu('egyptian')">مصري</button>
+            <button class="filter-btn" onclick="filterMenu('sides')">مقبلات</button>
+        </div>
+        <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <!-- TikTok Section -->
+    <section class="tiktok-section" id="tiktok">
+        <div class="section-title fade-in">
+            <h2>TikTok تابعنا على</h2>
+            <p>شاهد أشهى أطباقنا وعروضنا الحصرية على تيك توك</p>
+        </div>
+        <div class="tiktok-content fade-in">
+            <div class="tiktok-card">
+                <div class="tiktok-header">
+                    <div class="tiktok-avatar">&#127860;</div>
+                    <div class="tiktok-info">
+                        <h3>المجد بيتش</h3>
+                        <span>@almajd.beach</span>
+                    </div>
+                    <a href="https://www.tiktok.com/@almajd.beach" target="_blank" class="tiktok-follow-btn">
+                        TikTok
+                        تابعنا
+                    </a>
+                </div>
+                <div class="tiktok-preview">
+                    <div class="tiktok-video-preview">
+                        <span>TikTok</span>
+                        <p>شاهد أحدث فيديوهاتنا</p>
+                        <span>اطباق بحرية طازجة يومياً</span>
+                    </div>
+                </div>
+                <div class="tiktok-stats">
+                    <div class="tiktok-stat">
+                        <span>&#10084;</span>
+                        <span>تفاعل يومي</span>
+                    </div>
+                    <div class="tiktok-stat">
+                        <span>&#128236;</span>
+                        <span>عروض حصرية</span>
+                    </div>
+                    <div class="tiktok-stat">
+                        <span>&#128172;</span>
+                        <span>تواصل مباشر</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">تواصل معنا</h2>
+        <p style="font-size: 1.1rem; opacity: 0.9;">نحن هنا لخدمتك على مدار الساعة</p>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <span>&#128222;</span>
+                <h3>اتصل بنا</h3>
+                <a href="tel:0143913918">0143913918</a>
+            </div>
+            <div class="contact-item">
+                <span>&#128205;</span>
+                <h3>الموقع</h3>
+                <p>مقابل قيادة حرس الحدود<br>حي النسيم، ينبع</p>
+            </div>
+            <div class="contact-item">
+                <span>&#128336;</span>
+                <h3>أوقات العمل</h3>
+                <p>يومياً من 12:00 ظهراً<br>حتى 12:00 منتصف الليل</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                المجد <span>بيتش</span>
+            </div>
+            <p>تجربة بحرية فريدة في قلب ينبع</p>
+            <div class="footer-social">
+                <a href="#">Snap</a>
+                <a href="https://www.tiktok.com/@almajd.beach" target="_blank">TikTok</a>
+                <a href="#">Insta</a>
+                <a href="https://wa.me/966143913918" target="_blank">Whats</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 المجد بيتش - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>&#128717; سلة المشتريات</h3>
+            <button class="close-cart" onclick="toggleCart()">&#10060;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <span>&#128717;</span>
+                <p>السلة فارغة</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">أضف بعض الأطباق اللذيذة!</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>الإجمالي:</span>
+                <span id="cartTotal">0 ريال</span>
+            </div>
+            <button class="checkout-btn" onclick="sendWhatsAppOrder()">
+                &#128172;
+                إرسال الطلب عبر واتساب
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Menu Data
+        const menuItems = [
+            { id: 1, name: 'سمك مشوي', desc: 'سمك مشوي على الفحم مع الأرز والسلطة', price: 45, category: 'seafood', icon: '&#128031;', badge: 'الأكثر مبيعاً' },
+            { id: 2, name: 'جمبري مشوي', desc: 'جمبري طازج مشوي مع صلصة الليمون والثوم', price: 55, category: 'seafood', icon: '&#129424;' },
+            { id: 3, name: 'كشري مصري', desc: 'كشري أصيل بالعدس والأرز والمكرونة والبصل المقلي', price: 25, category: 'egyptian', icon: '&#127858;', badge: 'مصري أصيل' },
+            { id: 4, name: 'محاشي مشكلة', desc: 'ورق عنب، كوسا، باذنجان، فلفل محشي بالأرز', price: 35, category: 'egyptian', icon: '&#129382;' },
+            { id: 5, name: 'كفتة مشوية', desc: 'كفتة لحم مشوية على الفحم مع الطحينة والسلطة', price: 40, category: 'grill', icon: '&#127830;' },
+            { id: 6, name: 'فراخ مشوية', desc: 'فراخ مشوية على الفحم مع الأرز والبطاطس', price: 38, category: 'grill', icon: '&#127831;' },
+            { id: 7, name: 'كاليماري مقلي', desc: 'حبار مقلي مقرمش مع صلصة التارتار', price: 42, category: 'seafood', icon: '&#129425;' },
+            { id: 8, name: 'بطاطس مقلية', desc: 'بطاطس مقرمشة مع صلصة الكاتشب والمايونيز', price: 15, category: 'sides', icon: '&#127839;' },
+            { id: 9, name: 'تبولة', desc: 'سلطة تبولة بالبقدونس والطماطم والبرغل', price: 18, category: 'sides', icon: '&#129367;' },
+            { id: 10, name: 'حمص بالطحينة', desc: 'حمص أصيل مع الطحينة والزيت والبابريكا', price: 16, category: 'sides', icon: '&#129368;' },
+            { id: 11, name: 'ملوخية', desc: 'ملوخية بالأرانب أو الدجاج مع الأرز الأبيض', price: 30, category: 'egyptian', icon: '&#127807;' },
+            { id: 12, name: 'مشاوي مشكلة', desc: 'كفتة، شيش طاووق، كباب، مع الأرز والسلطة', price: 65, category: 'grill', icon: '&#127842;', badge: 'بوفيه' }
+        ];
+
+        // Cart State
+        let cart = [];
+
+        // Initialize Menu
+        function renderMenu(filter = 'all') {
+            const grid = document.getElementById('menuGrid');
+            const filtered = filter === 'all' ? menuItems : menuItems.filter(item => item.category === filter);
+            
+            grid.innerHTML = filtered.map(item => `
+                <div class="menu-item fade-in">
+                    <div class="menu-item-img">
+                        <span style="font-size: 4rem;">${item.icon}</span>
+                        ${item.badge ? `<span class="menu-item-badge">${item.badge}</span>` : ''}
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>${item.name}</h3>
+                            <span class="menu-item-price">${item.price} ريال</span>
+                        </div>
+                        <p class="menu-item-desc">${item.desc}</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                            <span class="qty-value" id="qty-${item.id}">1</span>
+                            <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(${item.id})">
+                            &#10133;
+                            أضف إلى السلة
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 100);
+        }
+
+        // Filter Menu
+        function filterMenu(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderMenu(category);
+        }
+
+        // Quantity Management
+        const quantities = {};
+        menuItems.forEach(item => quantities[item.id] = 1);
+
+        function updateQuantity(id, change) {
+            quantities[id] = Math.max(1, (quantities[id] || 1) + change);
+            document.getElementById(`qty-${id}`).textContent = quantities[id];
+        }
+
+        // Add to Cart
+        function addToCart(id) {
+            const item = menuItems.find(i => i.id === id);
+            const qty = quantities[id] || 1;
+            const existing = cart.find(c => c.id === id);
+            
+            if (existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({ ...item, qty });
+            }
+            
+            quantities[id] = 1;
+            document.getElementById(`qty-${id}`).textContent = 1;
+            
+            updateCartUI();
+            
+            const btn = event.target;
+            btn.innerHTML = '&#9989; تمت الإضافة!';
+            btn.style.background = '#27ae60';
+            setTimeout(() => {
+                btn.innerHTML = '&#10133; أضف إلى السلة';
+                btn.style.background = '';
+            }, 1500);
+        }
+
+        // Update Cart UI
+        function updateCartUI() {
+            const count = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').textContent = count;
+            
+            const cartItems = document.getElementById('cartItems');
+            const cartFooter = document.getElementById('cartFooter');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <span>&#128717;</span>
+                        <p>السلة فارغة</p>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">أضف بعض الأطباق اللذيذة!</p>
+                    </div>
+                `;
+                cartFooter.style.display = 'none';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-img">${item.icon}</div>
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <span class="cart-item-price">${item.price * item.qty} ريال</span>
+                        </div>
+                        <div class="cart-item-qty">
+                            <button onclick="updateCartQty(${item.id}, -1)">-</button>
+                            <span>${item.qty}</span>
+                            <button onclick="updateCartQty(${item.id}, 1)">+</button>
+                        </div>
+                        <button class="remove-item" onclick="removeFromCart(${item.id})">
+                            &#10060;
+                        </button>
+                    </div>
+                `).join('');
+                
+                const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+                document.getElementById('cartTotal').textContent = total + ' ريال';
+                cartFooter.style.display = 'block';
+            }
+        }
+
+        function updateCartQty(id, change) {
+            const item = cart.find(c => c.id === id);
+            if (item) {
+                item.qty = Math.max(1, item.qty + change);
+                updateCartUI();
+            }
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(c => c.id !== id);
+            updateCartUI();
+        }
+
+        // Toggle Cart
+        function toggleCart() {
+            document.getElementById('cartOverlay').classList.toggle('active');
+            document.getElementById('cartSidebar').classList.toggle('active');
+        }
+
+        // Send Order via WhatsApp
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) {
+                alert('السلة فارغة! أضف بعض الأطباق أولاً.');
+                return;
+            }
+            
+            let message = '*طلب جديد من المجد بيتش* 🐟\\n\\n';
+            message += '*الأطباق:*\\n';
+            
+            let total = 0;
+            cart.forEach(item => {
+                message += `- ${item.name} x ${item.qty} = ${item.price * item.qty} ريال\\n`;
+                total += item.price * item.qty;
+            });
+            
+            message += `\\n*الإجمالي: ${total} ريال*\\n`;
+            message += '\\n_يرجى تأكيد الطلب وتزويدنا بالعنوان_';
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/966143913918?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Initialize
+        renderMenu();
+    </script>
+</body>
+</html>
